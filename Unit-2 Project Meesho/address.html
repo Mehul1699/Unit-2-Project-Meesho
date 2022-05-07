@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address</title>
+    <script src="https://kit.fontawesome.com/7098584867.js" crossorigin="anonymous"></script>
+    <style>
+                *{
+            margin: 0;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+        #navbar{
+            height: auto;
+            width: 100%;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            /* position: fixed; */
+            margin-bottom: 150px;
+            position: sticky;
+            top: 0px;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+        }
+        #navbar>div{
+            height: 100%;
+            width: 50%;
+            box-sizing: border-box;
+            padding: 20px;
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            font-size: 40px;
+            color: rgb(253, 5, 129);
+            font-weight: bolder;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #address{
+            height: auto;
+            width: 30%;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            box-sizing: border-box;
+            padding: 20px;
+            margin-bottom: 50px;
+        }
+        .icon{
+            margin-right: 10px;
+        }
+        h2{
+            margin: 20px 0px 20px 0px;
+        }
+        input{
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div>meesho</div>
+        <div></div>
+    </div>
+    <div id="address">
+        <h3>Select Delivery Address</h3>
+        <h2><i class="fa-solid fa-phone icon"></i>Contact Details</h2>
+        <form id="adddress">
+            <label for="">Name</label><br />
+            <input id="name" type="text" placeholder="Enter Name"><br />
+            <label for="">Phone number</label><br />
+            <input id="phone" type="number" placeholder="Phone number"><br />
+            <h2><i class="fa-solid fa-location-dot icon"></i>Address</h2>
+            <label for="">House No. / Building Name</label><br />
+            <input id="house" type="text" placeholder="House No./Building Name"><br />
+            <label for="">Road Name / Area / Colony</label><br />
+            <input id="road" type="text" placeholder="Road Name/Area/Colony"><br />
+            <label for="">Pincode</label><br />
+            <input id="pincode" type="number" placeholder="Pincode"><br />
+            <label for="">City</label><br />
+            <input id="city" type="text" placeholder="City"><br />
+            <label for="">State</label><br />
+            <input id="state" type="text" placeholder="State"><br />
+            <label for="">Nearby Location(Optional)</label><br />
+            <input id="location" type="text" placeholder="Nearby Location"><br />
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+<script>
+    document.querySelector("#adddress").addEventListener("submit", saveAddress);
+
+    var addressArr=JSON.parse(localStorage.getItem("addressData")) || [];
+    function saveAddress(){
+        event.preventDefault();
+
+        // var naam=document.querySelector("#name").value;
+
+        // var pnumber=document.getElementById("phone").value;
+
+        // var home=document.getElementById("house").value;
+
+        // var sadak=document.getElementById("road").value;
+
+        // var code=document.getElementById("pincode").value;
+
+        // var capital=document.getElementById("city").value;
+
+        // var ghar=document.getElementById("state").value;
+
+        // if(naam=="" || pnumber=="" || home=="" || sadak=="" || cide=="" || capital=="" || ghar=="")
+        // {
+        //     alert("Complete the Details");
+        // }
+        // else
+        
+            var addressObj={
+            customer_name: adddress.name.value,
+            customer_number: adddress.phone.value,
+            house: adddress.house.value,
+            road_no: adddress.road.value,
+            pincode: adddress.pincode.value,
+            city: adddress.city.value,
+            state: adddress.state.value,
+            nearby_location: adddress.location.value
+        };
+
+        addressArr.push(addressObj);
+
+        localStorage.setItem("addressData", JSON.stringify(addressArr));
+
+        window.location.href="payment.html";
+    }
+</script>

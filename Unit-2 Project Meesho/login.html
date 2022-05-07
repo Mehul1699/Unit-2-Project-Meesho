@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in Page</title>
+    <script src="https://kit.fontawesome.com/7098584867.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="sign.css">
+</head>
+<body>
+    <div id="header">
+        <div id="header_child1">
+            <div>meesho</div>
+            <div>
+            </div>
+        </div>
+        <div id="header_child2">
+            <div>
+                <a href="https://play.google.com/store/apps/details?id=com.meesho.supply&pid=pow_website&c=pow" target="_blank"><p><span><i class="fa-solid fa-mobile-screen-button"></i></span>Download App</p></a>
+            </div>
+            <div>
+                <a href="supplier.html"><p>Become a Supplier</p></a>
+            </div>
+        </div>
+    </div>
+    <div id="login_container">
+        <div>
+            <img src="https://images.meesho.com/images/marketing/1648820929975.jpeg" alt="">
+        </div>
+        <div id="child">
+            <form id="login">
+                <label for="">Email ID</label><br />
+                <input id="log_email" type="email" placeholder="Enter Registered Email ID"><br />
+                <label for="">Password</label><br />
+                <input id="log_password" type="password" placeholder="Password"><br />
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    document.querySelector("#login").addEventListener("submit", customerLogin);
+
+    var signInData=JSON.parse(localStorage.getItem("signData"));
+    // console.log("Hello")
+    function customerLogin(){
+        event.preventDefault();
+        // console.log("inside function");
+        var loginSubmit={
+            email: login.log_email.value,
+            passcode: login.log_password.value
+        };
+
+        // var signObj={
+        //     phone: form.number.value,
+        //     mail: form.email.value,
+        //     pass: form.password.value
+        // }
+
+        for(var i=0; i<signInData.length; i++)
+        {
+            if(signInData==null)
+            {
+                alert("Create an Account and Then Login");
+            }
+            else if(loginSubmit.email==signInData[i].mail && loginSubmit.passcode==signInData[i].pass)
+            {
+                alert("Login Successful");
+                var anchor=document.createElement("a");
+                anchor.setAttribute("href", "mainpage.html");
+                anchor.innerText="Continue to Main Page";
+                document.querySelector("#child").append(anchor);
+            }
+            else
+            {
+                continue;
+            }
+        }
+    }
+</script>

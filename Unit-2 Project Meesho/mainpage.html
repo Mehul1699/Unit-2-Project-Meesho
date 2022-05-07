@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meesho Homepage</title>
+    <script src="https://kit.fontawesome.com/7098584867.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+        #header{
+    height: auto;
+    width: 100%;
+    display: grid;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    /* position: fixed; */
+    margin-bottom: 150px;
+    position: sticky;
+    top: 0px;
+    background-color: white;
+    grid-template-areas: 
+    "a b c d"
+    "e e e e";
+}
+#header>div:nth-child(1){
+    grid-area: a;
+    height: auto;
+    width: 25%;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+}
+#header>div:nth-child(1)>a{
+    font-size: 40px;
+    color: rgb(253, 5, 129);
+    font-weight: bolder;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+}
+#header>div:nth-child(2){
+    grid-area: b;
+    height: auto;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#header>div:nth-child(3){
+    grid-area: c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#header>div:nth-child(4){
+    grid-area: d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 30px;
+    text-align: center;
+}
+#header>div:nth-child(5){
+    grid-area: e;
+    height: 50px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+}
+#header>div:nth-child(5)>div{
+    margin: auto;
+}
+#header>div:nth-child(2)>a>p>span{
+    margin-right: 20px;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+    text-decoration: underline;
+}
+        #top_box{
+            height: auto;
+            width: 80%;
+            margin: auto;
+            display: flex;
+            margin-bottom: 40px;
+        }
+        #top_box>div{
+            height: auto;
+            width: 50%;
+        }
+        #top_box>div:first-child{
+            background-color: rgb(238, 234, 234);
+            box-sizing: border-box;
+            padding: 30px;
+        }
+        div+h1{
+            font-size: 40px;
+        }
+        #top_box>div>button{
+            box-sizing: border-box;
+            padding: 15px;
+            font-size: 20px;
+            background-color: rgb(255, 0, 76);
+            border: 0;
+            border-radius: 5px;
+        }
+        #top_box>div>p{
+            font-size: 18px;
+            color: grey;
+        }
+        #top_box>div>img{
+            width: 100%;
+            height: 100%;
+        }
+        button>a{
+            color: white;
+        }
+        .icon{
+            margin-right: 20px;
+        }
+        #top_box+h1{
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        #categories_box{
+            height: auto;
+            width: 80%;
+            margin: auto;
+            box-sizing: border-box;
+            padding: 40px 20px 20px 20px;
+            display: flex;
+            justify-content: space-between;
+            background-color: pink;
+            margin-bottom: 30px;
+        }
+        #categories_box>div:first-child{
+            height: 100%;
+            width: 35%;
+        }
+        #categories_box>div>a>img{
+            width: 100%;
+            height: 100%;
+        }
+        #contained{
+            height: auto;
+            width: 62%;
+        }
+        #contained>div:first-child{
+            height: 20%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(7, 56, 7);
+        }
+        #contained>div:nth-child(2){
+            height: 20%;
+        }
+        #fashion{
+            height: 60%;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        #fashion>div{
+            height: auto;
+            width: 48%;
+        }
+        #fashion>div>a>img{
+            width: 100%;
+            height: 100%;
+        }
+        #essentials{
+            height: auto;
+            width: 80%;
+            margin: auto;
+            box-sizing: border-box;
+            padding: 40px 20px 30px 20px;
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(29, 127, 238);
+            margin-bottom: 40px;
+        }
+        #essentials>div:first-child{
+            width: 30%;
+            height: auto;
+            text-align: center;
+        }
+        #essentials>div:first-child>h1{
+            margin-top: 70px;
+            margin-bottom: 30px;
+            color: rgb(4, 54, 4);
+        }
+        #essentials>div:first-child>button{
+            background-color: peachpuff;
+            border: 0;
+            padding: 20px 40px;
+            border-radius: 20px;
+        }
+        #essentials>div:first-child>button>a{
+            color: rgb(4, 54, 4);
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #essentials>div{
+            height: auto;
+            width: 20%;
+            text-align: center;
+        }
+        #essentials>div>img{
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        #essentials>div>button{
+            background-color: peachpuff;
+            color: rgb(4, 54, 4);
+            border: 0;
+            padding: 20px 40px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #supplier{
+            height: 400px;
+            width: 80%;
+            margin: auto;
+            background-image: url("https://images.meesho.com/images/pow/supply_banner_desktop.webp");
+            background-repeat: no-repeat;
+            background-size: contain;
+            box-sizing: border-box;
+            padding: 30px;
+            /* position: relative; */
+        }
+        #supplier>h1{
+            color:white;
+            /* position: absolute; */
+            top: 40px;
+            left: 40px;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        #supplier>p{
+            color: white;
+            size: 20px;
+            /* position: absolute; */
+            top: 90px;
+            left: 40px;
+            margin-bottom: 10px;
+        }
+        #supplier>.supplier_para{
+            color: white;
+            size: 20px;
+            /* position: absolute; */
+            top: 120px;
+            left: 40px;
+            margin-bottom: 10px;
+            /* display: inline; */
+        }
+        .tick{
+            margin-right: 20px;
+            color: green;
+        }
+        #supplier>.supplier_para2{
+            color: white;
+            size: 20px;
+            /* position: absolute; */
+            top: 150px;
+            left: 40px;
+            margin-bottom: 10px;
+            /* display: inline; */
+        }
+        #supplier>.supplier_para3{
+            color: white;
+            size: 20px;
+            /* position: absolute; */
+            top: 180px;
+            left: 40px;
+            margin-bottom: 10px;
+            /* display: inline; */
+        }
+        #supplier>button{
+            color: rgb(228, 20, 54);
+            padding: 20px;
+            border: 0;
+            border-radius: 5px;
+            /* position: absolute; */
+            top: 205px;
+            left: 40px;
+        }
+        #supplier>button>a{
+            color: rgb(253, 5, 129);
+            font-weight: bold;
+            font-size: 20px;
+        }
+        #supplier+h2{
+            margin-left: 10%;
+            margin-bottom: 20px;
+        }
+        #container{
+            margin: auto;
+            width: 85%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        #container>div{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        #container>div>img{
+            width: 100%;
+            height: 300px;
+            margin-bottom: 10px;
+        }
+        #container>div>p:first-of-type{
+            color: grey;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        #container>div>h3{
+            margin-left: 20px;
+            color: rgb(32, 32, 32);
+            display: inline;
+        }
+        .strikedOff{
+            display: inline;
+            font-size: 14px;
+            color: grey;
+            text-decoration: line-through;
+            margin-left: 5px;
+        }
+        .green{
+            color: green;
+            display: inline;
+            font-size: 14px;
+            margin-left: 5px;
+            font-weight: bold;
+        }
+        .green+p{
+            margin-left: 20px;
+            color: grey;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .delivery{
+            margin-left: 20px;
+            font-size: 12px;
+            color: rgb(83, 83, 83);
+            margin-bottom: 10px;
+        }
+        #container>div>button{
+            margin-left: 20px;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 20px;
+            color: white;
+            background-color: blue;
+            border: 0px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        a{
+            text-decoration: underline;
+        }
+        #bottom{
+            height: auto;
+            width: 100%;
+            background-color: rgb(224, 217, 217);
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        #bottom>h3{
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        #bottom>p{
+            color: rgb(66, 65, 65);
+            margin-bottom: 20px;
+        }
+        #bottom>p>a{
+            text-decoration: none;
+            color: rgb(255, 0, 76);
+        }
+        #child1{
+            height: auto;
+            width: 100%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            gap: 20px;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        #child1>div>h1{
+            font-size: 24px;
+        }
+        #child1>div>p{
+            color: rgb(66, 65, 65);
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        #child1>div>button{
+            background-color: black;
+            padding: 10px;
+            border: 0;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        #child1>div>button>a{
+            font-size: 18px;
+        }
+        #child1>div>button>a>.icon{
+            margin-right: 5px;
+        }
+        #child1>div:last-child>p{
+            font-size: 14px;
+        }
+    /* Medium Screens */
+    @media all and (min-width: 451px) and (max-width: 750px){
+    #container{
+        width: 90%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #header_child1{
+        width: 100%;
+    }
+    #header_child2{
+        width: 100%;
+    }
+    /* #header{
+        display: grid;
+        grid-template-columns: ;
+    } */
+}
+
+/* Small Screens */
+@media all and (min-width: 100px) and (max-width: 450px){
+    #container{
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #header_child1{
+        width: 100%;
+    }
+    #header_child2{
+        width: 100%;
+    }
+    /* #header{
+        display: inline;
+    } */
+}
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div><a href="mainpage.html">meesho</a></div>
+        <div>
+            <a href="https://play.google.com/store/apps/details?id=com.meesho.supply&pid=pow_website&c=pow" target="_blank"><p><span><i class="fa-solid fa-mobile-screen-button"></i></span>Download App</p></a>
+        </div>
+        <div>
+            <p>Become a Supplier</p>
+        </div>
+        <div>
+            <a href="cart.html" id="cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Cart <span></span></p>
+            </a>
+        </div>
+        <div id="navbar">
+            <div><a href="mens.html">Men</a></div>
+            <div><a href="womens_page.html">Women</a></div>
+            <div><a href="kids.html">Kids</a></div>
+            <div><a href="beautyhealth.html">Beauty & Health</a></div>
+            <div><a href="household.html">Home & Kitchen</a></div>
+        </div>
+</div>    
+    <div id="navbar"></div>
+    <div id="top_box">
+        <div>
+            <h1>Lowest Prices</h1>
+            <h1>Best Quality Shopping</h1>
+            <br>
+            <br>
+            <p>30+ Crores with Rewards | 500 Winners Every Hour</p>
+            <br>
+            <br>
+            <br>
+            <button><a href="https://play.google.com/store/apps/details?id=com.meesho.supply&pid=pow_website&c=pow&pow_click_page_type=HP&pow_distinct_id=18075951aaf5ec-0358191e6a61e2-3572654f-100200-18075951ab0854" target="_blank"><i class="fa-brands fa-google-play icon"></i>Download the Meesho App</a></button>
+        </div>
+        <div>
+            <img src="https://images.meesho.com/images/marketing/1649759684499.webp" alt="">
+        </div>
+    </div>
+    <h1>Top Categories to Choose from</h1>
+    <div id="categories_box">
+        <div>
+            <a href="womens_page.html"><img src="https://images.meesho.com/images/marketing/1651230292618.webp" /></a>
+        </div>
+        <div id="contained">
+            <div>
+                <h1>FASHION STORE</h1>
+            </div>
+            <div></div>
+            <div id="fashion">
+                <div>
+                    <a href="mens.html"><img src="https://images.meesho.com/images/marketing/1651230282672.webp" alt=""></a>
+                </div>
+                <div>
+                    <a href="kids.html"><img src="https://images.meesho.com/images/marketing/1651230271787.webp" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="essentials">
+        <div>
+            <h1>ESSENTIALS</h1>
+            <button><a href="essentials.html">VIEW ALL</a></button>
+        </div>
+        <div>
+            <img src="https://images.meesho.com/images/marketing/1651230112989.webp" alt="">
+            <button>Beauty</button>
+        </div>
+        <div>
+            <img src="https://images.meesho.com/images/marketing/1651230219898.webp" alt="">
+            <button>Home</button>
+        </div>
+        <div>
+            <img src="https://images.meesho.com/images/marketing/1651230181930.webp" alt="">
+            <button>Electronics</button>
+        </div>
+    </div>
+    <div id="supplier">
+        <h1>Register as a Meesho Supplier</h1>
+        <p>Sell your products to crores of customers at 0% commission</p>
+        <p class="supplier_para"><span><i class="fa-solid fa-circle-check tick"></i></span>Grow your buisenss 10 times</p>
+        <p class="supplier_para2"><span><i class="fa-solid fa-circle-check tick"></i></span>Enjoy 100% Profit</p>
+        <p class="supplier_para3"><span><i class="fa-solid fa-circle-check tick"></i></span>Sell all over India</p>
+        <button><a href="supplier.html">Sign up now</a></button>
+    </div>
+    <h2>Products For You</h2>
+    <div id="container"></div>
+    <div id="bottom">
+        <div id="child1">
+            <div>
+                <h1>Shop Non-Stop on Meesho</h1>
+                <p>Trusted by more than 1 Crore Indians
+                    Cash on Delivery | Free Delivery</p>
+                <button><a href="https://play.google.com/store/apps/details?id=com.meesho.supply&pid=pow_website&c=pow&pow_click_page_type=HP&pow_distinct_id=180844476c13d2-0a5835883d8dce-3572654f-100200-180844476c24f8" target="_blank"><i class="fa-brands fa-google-play icon"></i>Get it on Play Store</a></button>
+                <button><a href="https://apps.apple.com/us/app/meesho/id1457958492" target="_blank"><i class="fa-brands fa-apple icon"></i>Available on the App Store</a></button>
+            </div>
+            <div>
+                <p>Careers</p>
+                <p>Become a Supplier</p>
+                <p>Our Influencer Program</p>
+                <p>Hall of Fame</p>
+            </div>
+            <div>
+                <p>Legal & Policies</p>
+                <p>Meesho Tech Blogs</p>
+                <p>Notices and Returns</p>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <p>Fashnear Technologies Private Limited,
+                    CIN: U74900KA2015PTC082263
+                    06-105-B, 06-102, (138 Wu) Vaishnavi Signature, No. 78/9, Outer Ring Road, Bellandur, Varthur Hobli, Bengaluru-560103, Karnataka, India
+                    E-mail address: query@meesho.com
+                    © 2015-2022 Meesho.com</p>
+            </div>
+        </div>
+        <h3>Meesho Online Shopping Made Affordable</h3>
+        <p>There are lots of reasons to shop online! It can be fun and convenient. And if you are looking for budget-friendly online shopping, then you are at the right place. Meesho offers top-quality products at rock bottom prices, allowing you to shop to your heart’s content without any budget restraints.</p>
+        <h3>Explore a Wide Range of Products Across All Categories</h3>
+        <p>At Meesho, you have over 50 lakh items to choose from including a wide range of apparel, cosmetics, household items, and many more categories! We have 650+ product categories and thousands of handpicked products that are the latest on the market. Whether you're looking for a new outfit, a gift for a special someone, or just some household items for everyday use, you will find everything you need at the lowest prices on Meesho. </p>
+        <h3>The Best Of Women's Fashion at </h3>
+        <h4>Western Wear for Women</h4>
+        <p>Shopping for Western wear for women at Meesho is always economical as we only bring you the latest styles at wholesale prices. Affordability without compromising on the style quotient is possible at Meesho where you will find a huge range of casual, formal, and partywear dresses, gowns, jeans, tops, T-shirts, skirts, and more. You can buy all the trending outfits you want along with funky jewellery and accessories at reasonable prices</p>
+        <h4>Women’s Ethnic Wear Collection</h4>
+        <p>No matter what occasion or season, you’ll find the perfect outfits in our latest women’s ethnic wear collection. Picking the perfect outfit for your next wedding party or festive celebration is effortless when you shop with us! Check out our stunning collection of accessories, footwear etc to go with your ethnic look. </p>
+        <h3>The Latest Collection of Men’s Fashion Just a Click Away</h3>
+        <h4>Western Wear For Men</h4>
+        <p>From formal wear like suits, trousers, <a href="mens.html"> men’s shirts</a>, and coats to casual wear like polos and button-down shirts, we have the latest designs in every category. Our selection of menswear is sure to please even the pickiest male customers. These products come in a range of sizes & colors to fit your body & style. </p>
+        <h4>Men's Ethnic Wear</h4>
+        <p>Do you need a new Sherwani? Are you heading to a wedding and want to look your best? If you answered yes, look no further than our latest men’s ethnic wear collection! Whether you want a Kurta set, Pajamas, Sherwani set, or any other Indian attire, we have an array of budget-friendly styles that are sure to fit your needs.</p>
+        <h3>Accessories, Footwear, and more</h3>
+        <p>In our collection of accessories for men, you will find all sorts of items like watches, keychains, wallets, and more! Our footwear selection is constantly updated with the latest trends in shoes so that you never have to miss out on anything fashionable. If you're looking for some casual and comfortable sneakers, sports shoes, or smart and formal shoes for the workplace, we’re sure to have just the thing that will match your requirements. </p>
+        <h3>Best Quality Products at Low Prices</h3>
+        <p>We know you don't have time to run around town trying to find the best makeup or the best products for your skincare routine. This is why we sell everything from lipsticks, foundations, compacts to daily use face wash, moisturizers, sunscreens, and everything in between. Browse through our enormous collection of products to find the best skincare and makeup products for your needs. </p>
+        <h3>Trendy Kidswear for Your Little Ones</h3>
+        <p>If you're looking to buy some new outfits or cute accessories for your kids, be sure to check out our kidswear collection. You will find the latest kids’ <a href="kids.html"> rompers</a>, skirts, tops,<a href="kids.html"> dresses</a>, and frocks for girls to adorable clothing sets, jeans, shorts,topwear, etc for your boys. We also have ethnic wear and accessories for kids of all ages. Our baby care collection includes everything you might need to take care of your little one.</p>
+        <h3>An Exciting Range of Home Essentials, Kitchen Products and more</h3>
+        <h4>Kitchenware</h4>
+        <p>We carry all of the essentials that you'll need to spice up your kitchen. You'll have a wide variety of utensils and cookware to choose from, so you could pick something that fits your needs and your budget. We also have kitchen accessories like storage jars and containers, small appliances like juicers, mixers, induction cooktops that will make your cooking a whole lot easier! We have a wide range of serveware and cutlery including glasses, dinner sets, knives to choose from, so you'll be able to find what you need at a great price. </p>
+        <h4>Home Essentials</h4>
+        <p>We know how crucial it is to give your home a makeover every once in a while. However, it is important to ensure that you're investing your money in the right products. With Meesho, you'll find the best prices and the best selections, where we have home furnishing items like bedsheets, curtains, blankets, etc in every color you could possibly want and we're always making sure that you can get your hands on the best home decor items, with the biggest discounts. So be sure to check out our home decor section. </p>
+        <h3>Use Meesho App for The Best Online Shopping Experience</h3>
+        <p>Now you can shop for anything your heart desires from the comfort of your home. Make sure to download the Meesho app to have a smooth and enjoyable shopping experience. You can even share products you like with your friends on social media in just seconds. If you're trying to save time and get the best deals, downloading the best app for shopping is the way to go!
+            <br />   Don't miss out! <a href="https://play.google.com/store/apps/details?id=com.meesho.supply&hl=en_IN&gl=US" target="_blank">Download Meesho App Now</a>
+        </p>
+        <h3>Become a Reseller: Start Making Money In Three Simple Steps</h3>
+        <p>Now that you've been introduced to Meesho's product categories, it's time to learn about our other offerings. Besides shopping for yourself on the platform, you can also become an entrepreneur and earn cash for what you do best. Here’s how you can begin your entrepreneurial journey. <br />
+
+            Browse: Use your phone to register a new account, or log in to an existing one at the Meesho app or website. You can read through our catalog and select products that you want at wholesale rates! <br />
+            
+            Share: You can simply send catalogs and product images over Whatsapp, Facebook, or Instagram to your contacts in a single click using the share option. <br />
+            
+            Earn: Once you have shared the catalogs with your prospective customers, you'll soon start getting order requests and inquiries. You can quote product prices with an added margin, which will include a profit for you. Once an order has been placed and paid for, you can place the orders yourself using our established processes that ensure they get delivered to your waiting customers on time. <br />
+            
+            Start Your Online Shopping Journey with Meesho Today <br />
+            
+            You can rest assured that we only deliver the best products to you. You have multiple payment options including debit and credit cards, UPI, and Cash on Delivery. If you're not happy with the quality of your product, send it back and get a full refund without any hassle. Want to learn more? Feel free to send us an email at query@meesho.com. You can also reach out to us on Facebook, Instagram, or Twitter. We're here to help you! </p>
+    </div>
+</body>
+</html>
+
+
+
+
+
+<script>
+    var count=localStorage.getItem("counter3") || 0;
+
+    document.querySelector("#cart>p>span").innerText=count;
+    var main_page_data=[
+        {
+            item_img: "https://images.meesho.com/images/products/47770631/j6vfm_512.jpg",
+            item_name: "Smartees Men Tshirt",
+            item_price: "Rs. 176",
+            striked_off: "Rs. 207",
+            percentage: "15% off",
+            discount: "Rs. 31 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/20813908/efe05_512.jpg",
+            item_name: "Optify New Eye Lenses",
+            item_price: "Rs. 230",
+            striked_off: "Rs. 270",
+            percentage: "15% off",
+            discount: "Rs. 40 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/2981745/1_512.jpg",
+            item_name: "New Elite Cotton Men's Socks",
+            item_price: "Rs. 149",
+            striked_off: "Rs. 175",
+            percentage: "15% off",
+            discount: "Rs. 26 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/99760635/9zthf_512.jpg",
+            item_name: "Unique Attractive Men's Sport Shoes",
+            item_price: "Rs. 256",
+            striked_off: "Rs. 301",
+            percentage: "15% off",
+            discount: "Rs. 45 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/60877487/bryxj_512.jpg",
+            item_name: "Stylish Glamorous Women T...",
+            item_price: "Rs. 193",
+            striked_off: "Rs. 226",
+            percentage: "15% off",
+            discount: "Rs. 33 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/436925/1_512.jpg",
+            item_name: "Stylish Men's Watch",
+            item_price: "Rs. 233",
+            striked_off: "Rs. 274",
+            percentage: "15% off",
+            discount: "Rs. 41 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/89592871/gie4z_512.jpg",
+            item_name: "Stylo Women Blouses",
+            item_price: "Rs. 225",
+            striked_off: "Rs. 264",
+            percentage: "15% off",
+            discount: "Rs. 39 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/96631184/j3gfi_512.jpg",
+            item_name: "Alisha Refined Kurtis",
+            item_price: "Rs. 171",
+            striked_off: "Rs. 201",
+            percentage: "15% off",
+            discount: "Rs. 30 for first order",
+            delivery: "Delivery Rs. 68"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/38854822/lxgkp_512.jpg",
+            item_name: "Comfy Fashionable Men's T-Shirt",
+            item_price: "Rs. 134",
+            striked_off: "Rs. 157",
+            percentage: "15% off",
+            discount: "Rs. 23 for first order",
+            delivery: "Delivery Rs. 70"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/53275834/ahgeh_512.jpg",
+            item_name: "Trendy Ravishing Men T-shirt",
+            item_price: "Rs. 179",
+            striked_off: "Rs. 210",
+            percentage: "15% off",
+            discount: "Rs. 31 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/4983663/mcfg4_512.jpg",
+            item_name: "Free Gift Classy Men Watches",
+            item_price: "Rs. 182",
+            striked_off: "Rs. 213",
+            percentage: "15% off",
+            discount: "Rs. 31 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/100362345/kupv2_512.jpg",
+            item_name: "Adrika Petite Kurtis",
+            item_price: "Rs. 204",
+            striked_off: "Rs. 240",
+            percentage: "15% off",
+            discount: "Rs. 36 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/25990360/89737_512.jpg",
+            item_name: "Charvi Ensemble Sarees",
+            item_price: "Rs. 576",
+            striked_off: "Rs. 626",
+            percentage: "8% off",
+            discount: "Rs. 50 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/97876329/25mab_512.jpg",
+            item_name: "Elite Men Analog Watches",
+            item_price: "Rs. 175",
+            striked_off: "Rs. 205",
+            percentage: "15% off",
+            discount: "Rs. 30 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/8451039/4e64b_512.jpg",
+            item_name: "Velical Mens Shirts",
+            item_price: "Rs. 288",
+            striked_off: "Rs. 338",
+            percentage: "15% off",
+            discount: "Rs. 50 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/4766400/1_512.jpg",
+            item_name: "Stylish Women's Watches",
+            item_price: "Rs. 169",
+            striked_off: "Rs. 198",
+            percentage: "15% off",
+            discount: "Rs. 29 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/94916770/4fivw_512.jpg",
+            item_name: "Trendy Superior Kurtis",
+            item_price: "Rs. 720",
+            striked_off: "Rs. 770",
+            percentage: "6% off",
+            discount: "Rs. 50 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/8529555/02eeb_512.jpg",
+            item_name: "Trendy Cotton Towels",
+            item_price: "Rs. 387",
+            striked_off: "Rs. 437",
+            percentage: "11% off",
+            discount: "Rs. 50 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/46897669/ieyjk_512.jpg",
+            item_name: "Unique Men Kurtas",
+            item_price: "Rs. 515",
+            striked_off: "Rs. 565",
+            percentage: "9% off",
+            discount: "Rs. 50 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/5446060/1_512.jpg",
+            item_name: "Latest Trending Mens Formal Shoes",
+            item_price: "Rs. 451",
+            striked_off: "Rs. 501",
+            percentage: "10% off",
+            discount: "Rs. 50 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/70922264/2b4ea_512.jpg",
+            item_name: "Stylish Women Shape Wear",
+            item_price: "Rs. 148",
+            striked_off: "Rs. 173",
+            percentage: "14% off",
+            discount: "Rs. 25 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/84237003/lrjpm_512.jpg",
+            item_name: "New Collection Kid Girls",
+            item_price: "Rs. 365",
+            striked_off: "Rs. 415",
+            percentage: "12% off",
+            discount: "Rs. 50 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/59270995/9xgp5_512.jpg",
+            item_name: "Trimmers",
+            item_price: "Rs. 277",
+            striked_off: "Rs. 325",
+            percentage: "9% off",
+            discount: "Rs. 50 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/60557380/zhprb_512.jpg",
+            item_name: "Cute Comfy Kids Boys Kurta",
+            item_price: "Rs. 210",
+            striked_off: "Rs. 246",
+            percentage: "15% off",
+            discount: "Rs. 36 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/93285138/cxyrn_512.jpg",
+            item_name: "Classy Glamorous Women Top",
+            item_price: "Rs. 253",
+            striked_off: "Rs. 297",
+            percentage: "15% off",
+            discount: "Rs. 44 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/75198068/unyjc_512.jpg",
+            item_name: "Designer Kitchen Mat",
+            item_price: "Rs. 233",
+            striked_off: "Rs. 274",
+            percentage: "15% off",
+            discount: "Rs. 41 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/73240128/siind_512.jpg",
+            item_name: "Modern Chopper",
+            item_price: "Rs. 249",
+            striked_off: "Rs. 292",
+            percentage: "15% off",
+            discount: "Rs. 43 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/73240128/siind_512.jpg",
+            item_name: "Modern Chopper",
+            item_price: "Rs. 249",
+            striked_off: "Rs. 292",
+            percentage: "15% off",
+            discount: "Rs. 43 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/43566024/gjlod_512.jpg",
+            item_name: "Urbane Ravishing Men Tshirts",
+            item_price: "Rs. 305",
+            striked_off: "Rs. 355",
+            percentage: "14% off",
+            discount: "Rs. 50 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/71798467/uxvkw_512.jpg",
+            item_name: "Aakarsha Ensemble Kurtis",
+            item_price: "Rs. 221",
+            striked_off: "Rs. 260",
+            percentage: "15% off",
+            discount: "Rs. 39 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/54755410/mdhjk_512.jpg",
+            item_name: "Wonderful Incense Holders",
+            item_price: "Rs. 130",
+            striked_off: "Rs. 152",
+            percentage: "14% off",
+            discount: "Rs. 22 for first order",
+            delivery: "Free Delivery"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/71127025/goxsq_512.jpg",
+            item_name: "Hair Styles",
+            item_price: "Rs. 168",
+            striked_off: "Rs. 197",
+            percentage: "15% off",
+            discount: "Rs. 29 for first order",
+            delivery: "Free Delivery"
+        }
+    ];
+
+    var cartArr=JSON.parse(localStorage.getItem("cartData")) || [];
+
+    localStorage.setItem("mainData", JSON.stringify(main_page_data));
+
+    var data=JSON.parse(localStorage.getItem("mainData"));
+
+    data.forEach(function(el){
+        var box=document.createElement("div");
+
+        var item_image=document.createElement("img");
+        item_image.setAttribute("src", el.item_img);
+
+        var name=document.createElement("p");
+        name.innerText=el.item_name;
+
+        var rate=document.createElement("h3");
+        rate.innerText=el.item_price;
+
+        var striked=document.createElement("p");
+        striked.innerText=el.striked_off;
+        striked.setAttribute("class", "strikedOff");
+
+        var percentage_discount=document.createElement("p");
+        percentage_discount.innerText=el.percentage;
+        percentage_discount.setAttribute("class", "green");
+
+        var discount_price=document.createElement("p");
+        discount_price.innerText=el.discount;
+
+        var for_delivery=document.createElement("p");
+        for_delivery.innerText=el.delivery;
+        for_delivery.setAttribute("class", "delivery");
+
+        var btn=document.createElement("button");
+        btn.innerText="Add to Cart";
+        btn.addEventListener("click", function(){
+            addToCart(el);
+        })
+
+        function addToCart(el){
+        if(cartArr.includes(el))
+        {
+            alert("Item Already in Cart");
+        }
+        else
+        {
+            count++;
+            document.querySelector("#cart>p>span").innerText=count;
+            localStorage.setItem("counter3", count);
+            cartArr.push(el);
+            localStorage.setItem("cartData", JSON.stringify(cartArr));
+            alert("Item Added Successfully");
+        }
+    }
+
+        box.append(item_image, name, rate, striked, percentage_discount, discount_price, for_delivery, btn);
+        document.getElementById("container").append(box);
+    })
+
+    
+</script>

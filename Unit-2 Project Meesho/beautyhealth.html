@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty & Health</title>
+    <script src="https://kit.fontawesome.com/7098584867.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+    <!-- <style>
+        *{
+            margin: 0;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+        #header{
+            height: auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            /* position: fixed; */
+            margin-bottom: 150px;
+            position: sticky;
+            top: 0px;
+            background-color: white;
+        }
+        #header_child1{
+            height: auto;
+            width: 45%;
+            margin-left: 20px;
+        }
+        #header_child2{
+            height: auto;
+            width: 50%;
+            display: flex;
+        }
+        #header_child1>div:first-child{
+            height: auto;
+            width: 30%;
+            box-sizing: border-box;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            color: rgb(253, 5, 129);
+            font-weight: bolder;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #header_child1>div:nth-child(2){
+            height: auto;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        input{
+            height: 50px;
+            width: 100%;
+            position: relative;
+            border-radius: 5px;
+        }
+        .img_icon{
+            position: absolute;
+            top: 40px;
+            bottom:50px;
+            left:570px;
+            width:10px;
+            height:10px;
+            cursor: pointer;
+        }
+        #header_child2>div{
+            height: auto;
+            width: 25%;
+            margin: auto;
+            font-size: 18px;
+        }
+        #header_child2>div:first-child{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #header_child2>div:first-child>a>p>span{
+            margin-right: 20px;
+            text-decoration: none;
+        }
+        #header_child2>div:nth-child(2){
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            padding-left: 30px;
+        }
+        #header_child2>div:nth-child(3){
+            text-align: center;
+            box-sizing: border-box;
+            padding: 30px;
+        }
+        #header_child2>div:nth-child(4){
+            text-align: center;
+            box-sizing: border-box;
+            padding: 30px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            text-decoration: underline;
+        }
+    </style> -->
+</head>
+<body>
+    <div id="header">
+        <div><a href="mainpage.html">meesho</a></div>
+        <div>
+            <a href="https://play.google.com/store/apps/details?id=com.meesho.supply&pid=pow_website&c=pow" target="_blank"><p><span><i class="fa-solid fa-mobile-screen-button"></i></span>Download App</p></a>
+        </div>
+        <div>
+            <p>Become a Supplier</p>
+        </div>
+        <div>
+            <a href="cart.html" id="cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Cart <span></span></p>
+            </a>
+        </div>
+        <div id="navbar">
+            <div><a href="mens.html">Men</a></div>
+            <div><a href="womens_page.html">Women</a></div>
+            <div><a href="kids.html">Kids</a></div>
+            <div><a href="beautyhealth.html">Beauty & Health</a></div>
+            <div><a href="household.html">Home & Kitchen</a></div>
+        </div>
+</div>    
+    <h1>Beauty & Health Care</h1>
+    <select name="" id="beauty" onchange="handleFilter()">
+        <option value="">Select</option>
+        <option value="Makeup">Beauty</option>
+        <option value="Hygiene">Health</option>
+    </select>
+    <div id="container"></div>
+    <div id="bottom">
+        <div id="child1">
+            <div>
+                <h1>Shop Non-Stop on Meesho</h1>
+                <p>Trusted by more than 1 Crore Indians
+                    Cash on Delivery | Free Delivery</p>
+                <button><a href="https://play.google.com/store/apps/details?id=com.meesho.supply&pid=pow_website&c=pow&pow_click_page_type=HP&pow_distinct_id=180844476c13d2-0a5835883d8dce-3572654f-100200-180844476c24f8" target="_blank"><i class="fa-brands fa-google-play icon"></i>Get it on Play Store</a></button>
+                <button><a href="https://apps.apple.com/us/app/meesho/id1457958492" target="_blank"><i class="fa-brands fa-apple icon"></i>Available on the App Store</a></button>
+            </div>
+            <div>
+                <p>Careers</p>
+                <p>Become a Supplier</p>
+                <p>Our Influencer Program</p>
+                <p>Hall of Fame</p>
+            </div>
+            <div>
+                <p>Legal & Policies</p>
+                <p>Meesho Tech Blogs</p>
+                <p>Notices and Returns</p>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <p>Fashnear Technologies Private Limited,
+                    CIN: U74900KA2015PTC082263
+                    06-105-B, 06-102, (138 Wu) Vaishnavi Signature, No. 78/9, Outer Ring Road, Bellandur, Varthur Hobli, Bengaluru-560103, Karnataka, India
+                    E-mail address: query@meesho.com
+                    © 2015-2022 Meesho.com</p>
+            </div>
+        </div>
+        <h3>Meesho Online Shopping Made Affordable</h3>
+        <p>There are lots of reasons to shop online! It can be fun and convenient. And if you are looking for budget-friendly online shopping, then you are at the right place. Meesho offers top-quality products at rock bottom prices, allowing you to shop to your heart’s content without any budget restraints.</p>
+        <h3>Explore a Wide Range of Products Across All Categories</h3>
+        <p>At Meesho, you have over 50 lakh items to choose from including a wide range of apparel, cosmetics, household items, and many more categories! We have 650+ product categories and thousands of handpicked products that are the latest on the market. Whether you're looking for a new outfit, a gift for a special someone, or just some household items for everyday use, you will find everything you need at the lowest prices on Meesho. </p>
+        <h3>The Best Of Women's Fashion at </h3>
+        <h4>Western Wear for Women</h4>
+        <p>Shopping for Western wear for women at Meesho is always economical as we only bring you the latest styles at wholesale prices. Affordability without compromising on the style quotient is possible at Meesho where you will find a huge range of casual, formal, and partywear dresses, gowns, jeans, tops, T-shirts, skirts, and more. You can buy all the trending outfits you want along with funky jewellery and accessories at reasonable prices</p>
+        <h4>Women’s Ethnic Wear Collection</h4>
+        <p>No matter what occasion or season, you’ll find the perfect outfits in our latest women’s ethnic wear collection. Picking the perfect outfit for your next wedding party or festive celebration is effortless when you shop with us! Check out our stunning collection of accessories, footwear etc to go with your ethnic look. </p>
+        <h3>The Latest Collection of Men’s Fashion Just a Click Away</h3>
+        <h4>Western Wear For Men</h4>
+        <p>From formal wear like suits, trousers, <a href="mens.html"> men’s shirts</a>, and coats to casual wear like polos and button-down shirts, we have the latest designs in every category. Our selection of menswear is sure to please even the pickiest male customers. These products come in a range of sizes & colors to fit your body & style. </p>
+        <h4>Men's Ethnic Wear</h4>
+        <p>Do you need a new Sherwani? Are you heading to a wedding and want to look your best? If you answered yes, look no further than our latest men’s ethnic wear collection! Whether you want a Kurta set, Pajamas, Sherwani set, or any other Indian attire, we have an array of budget-friendly styles that are sure to fit your needs.</p>
+        <h3>Accessories, Footwear, and more</h3>
+        <p>In our collection of accessories for men, you will find all sorts of items like watches, keychains, wallets, and more! Our footwear selection is constantly updated with the latest trends in shoes so that you never have to miss out on anything fashionable. If you're looking for some casual and comfortable sneakers, sports shoes, or smart and formal shoes for the workplace, we’re sure to have just the thing that will match your requirements. </p>
+        <h3>Best Quality Products at Low Prices</h3>
+        <p>We know you don't have time to run around town trying to find the best makeup or the best products for your skincare routine. This is why we sell everything from lipsticks, foundations, compacts to daily use face wash, moisturizers, sunscreens, and everything in between. Browse through our enormous collection of products to find the best skincare and makeup products for your needs. </p>
+        <h3>Trendy Kidswear for Your Little Ones</h3>
+        <p>If you're looking to buy some new outfits or cute accessories for your kids, be sure to check out our kidswear collection. You will find the latest kids’ <a href="kids.html"> rompers</a>, skirts, tops,<a href="kids.html"> dresses</a>, and frocks for girls to adorable clothing sets, jeans, shorts,topwear, etc for your boys. We also have ethnic wear and accessories for kids of all ages. Our baby care collection includes everything you might need to take care of your little one.</p>
+        <h3>An Exciting Range of Home Essentials, Kitchen Products and more</h3>
+        <h4>Kitchenware</h4>
+        <p>We carry all of the essentials that you'll need to spice up your kitchen. You'll have a wide variety of utensils and cookware to choose from, so you could pick something that fits your needs and your budget. We also have kitchen accessories like storage jars and containers, small appliances like juicers, mixers, induction cooktops that will make your cooking a whole lot easier! We have a wide range of serveware and cutlery including glasses, dinner sets, knives to choose from, so you'll be able to find what you need at a great price. </p>
+        <h4>Home Essentials</h4>
+        <p>We know how crucial it is to give your home a makeover every once in a while. However, it is important to ensure that you're investing your money in the right products. With Meesho, you'll find the best prices and the best selections, where we have home furnishing items like bedsheets, curtains, blankets, etc in every color you could possibly want and we're always making sure that you can get your hands on the best home decor items, with the biggest discounts. So be sure to check out our home decor section. </p>
+        <h3>Use Meesho App for The Best Online Shopping Experience</h3>
+        <p>Now you can shop for anything your heart desires from the comfort of your home. Make sure to download the Meesho app to have a smooth and enjoyable shopping experience. You can even share products you like with your friends on social media in just seconds. If you're trying to save time and get the best deals, downloading the best app for shopping is the way to go!
+            <br />   Don't miss out! <a href="https://play.google.com/store/apps/details?id=com.meesho.supply&hl=en_IN&gl=US" target="_blank">Download Meesho App Now</a>
+        </p>
+        <h3>Become a Reseller: Start Making Money In Three Simple Steps</h3>
+        <p>Now that you've been introduced to Meesho's product categories, it's time to learn about our other offerings. Besides shopping for yourself on the platform, you can also become an entrepreneur and earn cash for what you do best. Here’s how you can begin your entrepreneurial journey. <br />
+
+            Browse: Use your phone to register a new account, or log in to an existing one at the Meesho app or website. You can read through our catalog and select products that you want at wholesale rates! <br />
+            
+            Share: You can simply send catalogs and product images over Whatsapp, Facebook, or Instagram to your contacts in a single click using the share option. <br />
+            
+            Earn: Once you have shared the catalogs with your prospective customers, you'll soon start getting order requests and inquiries. You can quote product prices with an added margin, which will include a profit for you. Once an order has been placed and paid for, you can place the orders yourself using our established processes that ensure they get delivered to your waiting customers on time. <br />
+            
+            Start Your Online Shopping Journey with Meesho Today <br />
+            
+            You can rest assured that we only deliver the best products to you. You have multiple payment options including debit and credit cards, UPI, and Cash on Delivery. If you're not happy with the quality of your product, send it back and get a full refund without any hassle. Want to learn more? Feel free to send us an email at query@meesho.com. You can also reach out to us on Facebook, Instagram, or Twitter. We're here to help you! </p>
+    </div>
+</body>
+</html>
+
+
+
+
+<script>
+    var count=localStorage.getItem("counter3") || 0;
+
+    document.querySelector("#cart>p>span").innerText=count;
+
+    var bhFrame=[   
+        {
+            item_img: "https://images.meesho.com/images/products/41269621/bpfik_512.jpg",
+            item_name: "Superior Brightening BB & CC Cream",
+            item_price: "Rs. 181",
+            striked_off: "Rs. 212",
+            percentage: "15% off",
+            discount: "Rs. 31 off for first order",
+            item: "Makeup"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/42297237/cxm2o_512.jpg",
+            item_name: "Premium Hydrating Face Mask",
+            item_price: "Rs. 122",
+            striked_off: "Rs. 143",
+            percentage: "15% off",
+            discount: "Rs. 21 off for first order",
+            item: "Makeup"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/42674737/wgv6b_512.jpg",
+            item_name: "Premium Sparkling Kajal",
+            item_price: "Rs. 443",
+            striked_off: "Rs. 493",
+            percentage: "10% off",
+            discount: "Rs. 50 off for first order",
+            item: "Makeup"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/67723656/sgdxj_512.jpg",
+            item_name: "Superior Rich Look lipgloss",
+            item_price: "Rs. 104",
+            striked_off: "Rs. 122",
+            percentage: "15% off",
+            discount: "Rs. 18 off for first order",
+            item: "Makeup"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/97197420/xdihs_512.jpg",
+            item_name: "Essentials Nail Paint",
+            item_price: "Rs. 107",
+            striked_off: "Rs. 125",
+            percentage: "14% off",
+            discount: "Rs. 18 off for first order",
+            item: "Makeup"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/23532916/0f05b_512.jpg",
+            item_name: "Classic Face Packs",
+            item_price: "Rs. 84",
+            striked_off: "Rs. 98",
+            percentage: "14% off",
+            discount: "Rs. 14 off for first order",
+            item: "Makeup"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/65230401/6s9wa_512.jpg",
+            item_name: "Classic Sanitizer/Disinfectant",
+            item_price: "Rs. 148",
+            striked_off: "Rs. 198",
+            percentage: "15% off",
+            discount: "Rs. 29 off for first order",
+            item: "Hygiene"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/6319629/f4b47_512.jpg",
+            item_name: "Dentaclean Toothpaste with Mouthwash",
+            item_price: "Rs. 102",
+            striked_off: "Rs. 120",
+            percentage: "15% off",
+            discount: "Rs. 18 off for first order",
+            item: "Hygiene"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/56451344/8d4mh_512.jpg",
+            item_name: "New Nails Care",
+            item_price: "Rs. 116",
+            striked_off: "Rs. 136",
+            percentage: "15% off",
+            discount: "Rs. 20 off for first order",
+            item: "Makeup"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/6981712/ec18a_512.jpg",
+            item_name: "Useful Hand Sanitizer",
+            item_price: "Rs. 92",
+            striked_off: "Rs. 148",
+            percentage: "14% off",
+            discount: "Rs. 50 off for first order",
+            item: "Hygiene"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/91658022/c6h71_512.jpg",
+            item_name: "Kajal & Eyeliner",
+            item_price: "Rs. 142",
+            striked_off: "Rs. 167",
+            percentage: "15% off",
+            discount: "Rs. 25 off for first order",
+            item: "Makeup"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/64823756/txqio_512.jpg",
+            item_name: "Sensational Attractive Lip Care",
+            item_price: "Rs. 618",
+            striked_off: "Rs. 668",
+            percentage: "7% off",
+            discount: "Rs. 50 off for first order",
+            item: "Makeup"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/7053533/8c38b_512.jpg",
+            item_name: "Urbanmooch Charcoal Teeth Whitening Powder",
+            item_price: "Rs. 117",
+            striked_off: "Rs. 137",
+            percentage: "15% off",
+            discount: "Rs. 20 off for first order",
+            item: "Hygiene"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/8100153/57db2_512.jpg",
+            item_name: "Mouth Wash",
+            item_price: "Rs. 131",
+            striked_off: "Rs. 154",
+            percentage: "15% off",
+            discount: "Rs. 23 off for first order",
+            item: "Hygiene"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/53638818/ahxgu_512.jpg",
+            item_name: "Mamaearth Unique Facewash and Scrub",
+            item_price: "Rs. 151",
+            striked_off: "Rs. 177",
+            percentage: "15% off",
+            discount: "Rs. 26 off for first order",
+            item: "Makeup"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/8134490/21be6_512.jpg",
+            item_name: "Stylish Tongue Cleaner",
+            item_price: "Rs. 189",
+            striked_off: "Rs. 222",
+            percentage: "15% off",
+            discount: "Rs. 35 off for first order",
+            item: "Hygiene"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/6416745/3a68d_512.jpg",
+            item_name: "Advanced Teeth Whitening Powder",
+            item_price: "Rs. 297",
+            striked_off: "Rs. 344",
+            percentage: "14% off",
+            discount: "Rs. 50 off for first order",
+            item: "Hygiene"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/96910570/fvxgl_512.jpg",
+            item_name: "Eye Glitter",
+            item_price: "Rs. 131",
+            striked_off: "Rs. 153",
+            percentage: "14% off",
+            discount: "Rs. 22 off for first order",
+            item: "Makeup"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/64215169/siwls_512.jpg",
+            item_name: "Professional Enriched Lip Liner",
+            item_price: "Rs. 154",
+            striked_off: "Rs. 181",
+            percentage: "15% off",
+            discount: "Rs. 27 off for first order",
+            item: "Makeup"
+        },
+        {
+            item_img: "https://images.meesho.com/images/products/23657220/00eaf_512.jpg",
+            item_name: "Premium Norishing Nail Care",
+            item_price: "Rs. 224",
+            striked_off: "Rs. 263",
+            percentage: "15% off",
+            discount: "Rs. 39 off for first order",
+            item: "Makeup"
+        }
+    ];
+
+    localStorage.setItem("bhData", JSON.stringify(bhFrame));
+
+    var cartArr1=JSON.parse(localStorage.getItem("cartData")) || [];
+
+    var bhdata=JSON.parse(localStorage.getItem("bhData"));
+    displayData(bhdata);
+
+    function handleFilter(){
+        var choosen=document.querySelector("#beauty").value;
+        var filteredData=bhdata.filter(function(ele){
+            return ele.item==choosen;
+        })
+        displayData(filteredData);
+        // console.log(filteredData);
+    }
+
+
+    function displayData(bhdata)
+    {
+        document.getElementById("container").innerText="";
+        bhdata.forEach(function(ele){
+            var beauty_box=document.createElement("div");
+
+            var huliya=document.createElement("img");
+            huliya.setAttribute("src", ele.item_img);
+
+            var item_naam=document.createElement("p");
+            item_naam.innerText=ele.item_name;
+
+            var nakad=document.createElement("h3");
+            nakad.innerText=ele.item_price;
+
+            var cutted=document.createElement("p");
+            cutted.innerText=ele.striked_off;
+
+            var cent_discount=document.createElement("p");
+            cent_discount.innerText=ele.percentage;
+            cent_discount.setAttribute("class", "green");
+
+            var off_discount=document.createElement("p");
+            off_discount.innerText=ele.discount;
+
+            var category=document.createElement("h4");
+            category.innerText=ele.item;
+
+            var btn2=document.createElement("button");
+            btn2.innerText="Add To Cart";
+            btn2.addEventListener("click", function(){
+                addDataToCart(ele);
+            })
+
+
+            function addDataToCart(ele){
+                if(cartArr1.includes(ele))
+                {
+                    alert("Item Already in Cart");
+                }
+                else
+                {
+                    count++;
+                    localStorage.setItem("counter3", count);
+                    document.querySelector("#cart>p>span").innerText=count;
+                    cartArr1.push(ele);
+                    localStorage.setItem("cartData", JSON.stringify(cartArr1));
+                    alert("Item Added Successfully");
+                }
+            }
+
+            beauty_box.append(huliya, item_naam, nakad, cutted, cent_discount, off_discount, category, btn2);
+
+            document.getElementById("container").append(beauty_box);
+        })
+    }
+</script>

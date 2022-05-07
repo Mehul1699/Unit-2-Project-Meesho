@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meesho Cart</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+        #navbar{
+            height: auto;
+            width: 100%;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            /* position: fixed; */
+            margin-bottom: 150px;
+            position: sticky;
+            top: 0px;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+        }
+        #navbar>div{
+            height: auto;
+            width: 50%;
+            box-sizing: border-box;
+            padding: 20px;
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            font-size: 40px;
+            color: rgb(253, 5, 129);
+            font-weight: bolder;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #container2{
+            height: auto;
+            width: 70%;
+            margin: auto;
+        }
+        #container2>div{
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .box1{
+            height: auto;
+            width: 30%;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        }
+        .box1>img{
+            width: 100%;
+            height: 300px;
+        }
+        .box2{
+            width: 70%;
+            box-sizing: border-box;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        }
+        .box2>h4{
+            margin-bottom: 30px;
+        }
+        .box2>h4+p{
+            margin-bottom: 30px;
+        }
+        .box2>button{
+            padding: 10px;
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            border: 0;
+            border-radius: 5px;
+        }
+        h1{
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        h1+h4{
+            margin-left: 30px;
+        }
+        li{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        ol+p{
+            margin: 20px 0px 20px 20px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        input{
+            margin: 20px 10px 20px 40px;
+        }
+        a{
+            display: block;
+            text-decoration: none;
+            font-size: 30px;
+            margin: 30px;
+            text-align: right;
+        }
+        #heading4{
+            margin-left: 20px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div>meesho</div>
+        <div>
+            <a href="mainpage.html">Continue to Mainpage</a>
+        </div>
+    </div>
+    <h1>MEESHO CART</h1>
+    <h4>Exciting Offers</h4>
+    <ol>
+        <li>
+            For Flat 30 % off on your order, Apply Code "FLAT30"
+        </li>
+        <li>
+            Special Offer for limited Period. For 50% off Apply "MEESHOSPECIAL50"; 
+        </li>
+    </ol>
+    <p>Total Price of Cart: <span></span></p>
+    <h4 id="heading4">Please Apply Promo Code after every updation</h4>
+    <a href="address.html">Continue to Payment</a>
+    <div id="container2"></div>
+    <input id="promo" type="text" placeholder="Enter PromoCode">
+    <button id="apply">Apply PromoCode</button>
+</body>
+</html>
+
+
+
+<script>
+    var count=localStorage.getItem("counter3");
+
+    var cartFrame=JSON.parse(localStorage.getItem("cartData"));
+    // console.log(cartFrame);
+
+    var count=localStorage.getItem("counter1") || 1;
+
+    displayCart(cartFrame);
+
+    var total=0;
+    
+for(var i=0; i<cartFrame.length; i++)
+{
+    var str="";
+    for(var j=4; j<cartFrame[i].item_price.length; j++)
+{
+    str=str+cartFrame[i].item_price[j];
+}
+total=total+Number(str);
+}
+
+var newPrice=total;
+localStorage.setItem("newTotal", newPrice);
+document.querySelector("p>span").innerText=Number(localStorage.getItem("newTotal"));
+
+
+// var total=
+
+
+    function displayCart(cartFrame)
+    {
+        cartFrame.forEach(function(ele, index){
+            var dubba1=document.createElement("div");
+
+            var child1=document.createElement("div");
+            child1.setAttribute("class", "box1");
+
+            var child2=document.createElement("div");
+            child2.setAttribute("class", "box2");
+
+            var pic=document.createElement("img");
+            pic.setAttribute("src", ele.item_img);
+
+            var cheez=document.createElement("h4");
+            cheez.innerText=ele.item_name;
+
+
+            var price=document.createElement("p");
+            price.innerText=ele.item_price;
+
+            var delete_button=document.createElement("button");
+            delete_button.innerText="DELETE";
+            delete_button.addEventListener("click", function(){
+                deleteParent(ele, index);
+            })
+
+
+            child1.append(pic);
+            child2.append(cheez, price, delete_button);
+
+            dubba1.append(child1, child2);
+
+            document.querySelector("#container2").append(dubba1);
+        })
+    }
+
+    function deleteParent(ele, index){
+        cartFrame.splice(index, 1);
+        localStorage.setItem("cartData", JSON.stringify(cartFrame));
+        count--;
+        localStorage.setItem("counter3", count);
+        window.location.reload();
+    }
+
+    document.querySelector("#apply").addEventListener("click", applyCoupon);
+
+    function applyCoupon(){
+        var code=document.getElementById("promo").value;
+        if(code=="FLAT30")
+        {
+            newPrice=total-(30*total/100);
+            localStorage.setItem("newTotal", newPrice);
+            document.querySelector("p>span").innerText=Number(localStorage.getItem("newTotal"));
+        }
+        else if(code=="MEESHOSPECIAL50")
+        {
+            newPrice=total-(total/2);
+            localStorage.setItem("newTotal", newPrice);
+            document.querySelector("p>span").innerText=Number(localStorage.getItem("newTotal"));
+        }
+    }
+</script>
+
+
+
+
+<!-- delivery: "Free Delivery"
+discount: "Rs. 26 for first order"
+item_img: "https://images.meesho.com/images/products/2981745/1_512.jpg"
+item_name: "New Elite Cotton Men's Socks"
+item_price: "Rs. 149"
+percentage: "15% off"
+striked_off: "Rs. 175" -->
