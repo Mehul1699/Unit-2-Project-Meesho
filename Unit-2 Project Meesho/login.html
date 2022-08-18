@@ -70,8 +70,7 @@
             {
                 alert("Login Successful");
                 var anchor=document.createElement("a");
-                anchor.setAttribute("href", "mainpage.html");
-                anchor.innerText="Continue to Main Page";
+                window.location.href="mainpage.html";
                 document.querySelector("#child").append(anchor);
             }
             else
