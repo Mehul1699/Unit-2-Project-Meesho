@@ -2,7 +2,7 @@
 Meesho Clone. 
 This is an individual project that was basically created for educational purpose by Mehul(fw17_0133).
 
-This project is a clone of [Meesho](https://www.meesho.com/) which is a social commerce platform that allows reselling products and basically deals in clothing, footwear, household products beauty products etc.
+This project is a clone of [Meesho](https://www.meesho.com/) which is a social commerce platform that allows reselling products and basically deals in clothing, footwear, household products, beauty products etc.
 
 # Welcome 
 Greetings Readers.
